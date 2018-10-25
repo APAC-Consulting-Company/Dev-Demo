@@ -18,7 +18,8 @@
     <tr>
         <td>
             @Html.ActionLink("Edit", "Edit", "Account", new { id = user.UserId }, null) |
-            @Html.ActionLink("Details", "Details", "Account", new { id = user.UserId }, null)
+            @Html.ActionLink("Details", "Details", "Account", new { id = user.UserId }, null) |
+            @Html.ActionLink("Delete", "Delete", "Account", new { id = user.UserId }, null)
         </td>
         <td>@user.AccountEnabled</td>
         <td>@Html.Encode(user.FullName)</td>

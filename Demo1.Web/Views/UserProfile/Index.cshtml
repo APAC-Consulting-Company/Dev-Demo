@@ -1,5 +1,5 @@
-﻿@using Demo1.BL.Features.Users.Queries
-@model GetExternalUserByIdModel
+﻿@using Demo1.BusinessEntity
+@model ExternalUserProfile
 
 <h1>User Detail</h1>
 <table class="table table-bordered table-striped">
@@ -9,15 +9,15 @@
     </tr>
     <tr>
         <td>Display Name</td>
-        <td>@Html.Encode(Model.DisplayName)</td>
+        <td>@Html.Encode(Model.FullName)</td>
     </tr>
     <tr>
         <td>Given Name</td>
-        <td>@Html.Encode(Model.GivenName)</td>
+        <td>@Html.Encode(Model.FirstName)</td>
     </tr>
     <tr>
         <td>Surname</td>
-        <td>@Html.Encode(Model.Surname)</td>
+        <td>@Html.Encode(Model.LastName)</td>
     </tr>
     <tr>
         <td>Principal Name/td>

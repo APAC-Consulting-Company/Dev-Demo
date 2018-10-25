@@ -22,38 +22,67 @@ namespace Demo1.Controllers
             this._mediator = mediator;
         }
 
+        [Authorize]
         public async Task<ActionResult> Details(string id)
         {
-            var user = await _mediator.Send(new BL.Features.Users.Queries.GetExternalUserById() { Id = id });
-            return View(user);
+            var userProfile = await _mediator.Send(new BL.Features.Users.Queries.GetExternalUserById() { Id = id });
+            return View(userProfile);
         }
 
+        [Authorize]
         public async Task<ActionResult> New(CreateExternalUser command)
         {
+            ViewBag.FailedReason = @"";
             if (command != null && command.ExternalUserProfile != null)
             {
-                await _mediator.Send(command);
-                return Redirect("Home/Index");
+                try
+                {
+                    await _mediator.Send(command);
+                    return RedirectToAction("Index", "Home");
+                }
+                catch(Exception exception)
+                {
+                    ViewBag.FailedReason = exception.Message;
+                }
             }
             return View();
         }
 
+        [Authorize]
         public async Task<ActionResult> Edit(UpdateExternalUser command)
         {
+            ViewBag.FailedReason = @"";
             if (command != null && command.Id != "" && command.ExternalUserProfile != null)
             {
-                await _mediator.Send(command);
-                return Redirect("Home/Index");
+                try
+                {
+                    await _mediator.Send(command);
+                    return RedirectToAction("Index", "Home");
+                }
+                catch (Exception exception)
+                {
+                    ViewBag.FailedReason = exception.Message;
+                }
             }
 
-            var user = await _mediator.Send(new BL.Features.Users.Queries.GetExternalUserById() { Id = command?.Id });
-            return View(new UpdateExternalUser { Id = user.UserId, ExternalUserProfile = user });
+            var userProfile = await _mediator.Send(new BL.Features.Users.Queries.GetExternalUserById() { Id = command?.Id });
+            return View(new UpdateExternalUser { Id = userProfile.UserId, ExternalUserProfile = userProfile });
         }
 
+        [Authorize]
         public async Task<ActionResult> Delete(string id)
         {
-            await _mediator.Send(new BL.Features.Users.Commands.DeleteExternalUser() { Id = id });
-            return Redirect("Home/Index");
+            ViewBag.FailedReason = @"";
+            try
+            {
+                await _mediator.Send(new BL.Features.Users.Commands.DeleteExternalUser() { Id = id });
+                return RedirectToAction("Index", "Home");
+            }
+            catch (Exception exception)
+            {
+                ViewBag.FailedReason = exception.Message;
+            }
+            return View();
         }
 
         public void SignIn()

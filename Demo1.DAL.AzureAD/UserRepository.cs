@@ -83,9 +83,9 @@ namespace Demo1.DAL.AzureAD
                 result.AccountEnabled = userProfile.AccountEnabled;
                 result.FullName = userProfile.DisplayName;
                 result.FirstName = userProfile.GivenName;
+                result.LastName = userProfile.Surname;
                 result.Mail = userProfile.Mail;
                 result.MailNickname = userProfile.MailNickname;
-                result.LastName = userProfile.Surname;
                 result.UserPrincipalName = userProfile.UserPrincipalName;
                 result.UserId = userProfile.ObjectId;
             }
@@ -104,8 +104,10 @@ namespace Demo1.DAL.AzureAD
             IUser userProfile = new Microsoft.Azure.ActiveDirectory.GraphClient.User
             {
                 AccountEnabled = true,
-                DisplayName = userProfileNew.FullName,
-                MailNickname = userProfileNew.MailNickname,
+                GivenName = userProfileNew.FirstName,
+                Surname = userProfileNew.LastName,
+                DisplayName = string.Format("{0} {1}", userProfileNew.FirstName, userProfileNew.LastName),
+                Mail = userProfileNew.UserPrincipalName,
                 UserPrincipalName = userProfileNew.UserPrincipalName,
                 PasswordProfile = new Microsoft.Azure.ActiveDirectory.GraphClient.PasswordProfile
                 {
@@ -133,9 +135,9 @@ namespace Demo1.DAL.AzureAD
             var userProfile = pagedResult.CurrentPage.FirstOrDefault();
             if (userProfile != null)
             {
-                userProfile.DisplayName = userProfileUpdate.FullName;
                 userProfile.GivenName = userProfileUpdate.FirstName;
                 userProfile.Surname = userProfileUpdate.LastName;
+                userProfile.DisplayName = string.Format("{0} {1}", userProfileUpdate.FirstName, userProfileUpdate.LastName);
                 await userProfile.UpdateAsync();
             }
         }
