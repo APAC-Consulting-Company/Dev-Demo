@@ -2,7 +2,7 @@
 @model UpdateExternalUser
 
 <h1>Update User</h1>
-@using (Html.BeginForm("New", "Account", FormMethod.Post))
+@using (Html.BeginForm("Edit", "Account", FormMethod.Post))
 {
     <div class="form-horizontal">
         @Html.HiddenFor(model => model.Id)
