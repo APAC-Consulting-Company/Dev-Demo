@@ -1,0 +1,33 @@
+﻿@using Demo1.BusinessEntity
+@model IReadOnlyCollection<ExternalUserProfile>
+
+<h1>Users</h1>
+<table class="table table-bordered table-striped">
+    <tr>
+        <th></th>
+        <th>Enabled</th>
+        <th>Display Name</th>
+        <th>Given Name</th>
+        <th>Surname</th>
+        <th>Principal Name</th>
+        <th>Mail</th>
+        <th>Mail Nickname</th>
+    </tr>
+    @foreach (var user in Model)
+    {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", "Account", new { id = user.UserId }, null) |
+            @Html.ActionLink("Details", "Details", "Account", new { id = user.UserId }, null)
+        </td>
+        <td>@user.AccountEnabled</td>
+        <td>@Html.Encode(user.FullName)</td>
+        <td>@Html.Encode(user.FirstName)</td>
+        <td>@Html.Encode(user.LastName)</td>
+        <td>@Html.Encode(user.UserPrincipalName)</td>
+        <td>@Html.Encode(user.Mail)</td>
+        <td>@Html.Encode(user.MailNickname)</td>
+    </tr>
+    }
+</table>
+<p>@Html.ActionLink("Create New", "New", "Account")</p> 

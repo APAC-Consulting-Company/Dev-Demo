@@ -1,0 +1,6 @@
+D:\Projects\Project4Demo\Demo1\Demo1.BusinessEntity\bin\Debug\Demo1.BusinessEntity.dll
+D:\Projects\Project4Demo\Demo1\Demo1.BusinessEntity\bin\Debug\Demo1.BusinessEntity.pdb
+D:\Projects\Project4Demo\Demo1\Demo1.BusinessEntity\obj\Debug\Demo1.BusinessEntity.csprojAssemblyReference.cache
+D:\Projects\Project4Demo\Demo1\Demo1.BusinessEntity\obj\Debug\Demo1.BusinessEntity.csproj.CoreCompileInputs.cache
+D:\Projects\Project4Demo\Demo1\Demo1.BusinessEntity\obj\Debug\Demo1.BusinessEntity.dll
+D:\Projects\Project4Demo\Demo1\Demo1.BusinessEntity\obj\Debug\Demo1.BusinessEntity.pdb

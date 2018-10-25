@@ -1,0 +1,35 @@
+﻿@using Demo1.BusinessEntity
+@model ExternalUserProfile
+
+<h1>User Detail</h1>
+<table class="table table-bordered table-striped">
+    <tr>
+        <td>Account Enabled</td>
+        <td>@Model.AccountEnabled</td>
+    </tr>
+    <tr>
+        <td>Display Name</td>
+        <td>@Html.Encode(Model.FullName)</td>
+    </tr>
+    <tr>
+        <td>Given Name</td>
+        <td>@Html.Encode(Model.FirstName)</td>
+    </tr>
+    <tr>
+        <td>Surname</td>
+        <td>@Html.Encode(Model.LastName)</td>
+    </tr>
+    <tr>
+        <td>Principal Name/td>
+        <td>@Html.Encode(Model.UserPrincipalName)</td>
+    </tr>
+    <tr>
+        <td>Mail</td>
+        <td>@Html.Encode(Model.Mail)</td>
+    </tr>
+
+    <tr>
+        <td>Mail Nickname</td>
+        <td>@Html.Encode(Model.MailNickname)</td>
+    </tr>
+</table>

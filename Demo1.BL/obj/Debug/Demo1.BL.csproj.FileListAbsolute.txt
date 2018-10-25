@@ -1,0 +1,14 @@
+D:\Projects\Project4Demo\Demo1\Demo1.BL\bin\Debug\Demo1.BL.dll
+D:\Projects\Project4Demo\Demo1\Demo1.BL\bin\Debug\Demo1.BL.pdb
+D:\Projects\Project4Demo\Demo1\Demo1.BL\bin\Debug\AutoMapper.dll
+D:\Projects\Project4Demo\Demo1\Demo1.BL\bin\Debug\Demo1.BusinessEntity.dll
+D:\Projects\Project4Demo\Demo1\Demo1.BL\bin\Debug\Demo1.DAL.dll
+D:\Projects\Project4Demo\Demo1\Demo1.BL\bin\Debug\MediatR.dll
+D:\Projects\Project4Demo\Demo1\Demo1.BL\bin\Debug\Demo1.BusinessEntity.pdb
+D:\Projects\Project4Demo\Demo1\Demo1.BL\bin\Debug\Demo1.DAL.pdb
+D:\Projects\Project4Demo\Demo1\Demo1.BL\bin\Debug\AutoMapper.xml
+D:\Projects\Project4Demo\Demo1\Demo1.BL\obj\Debug\Demo1.BL.csprojAssemblyReference.cache
+D:\Projects\Project4Demo\Demo1\Demo1.BL\obj\Debug\Demo1.BL.csproj.CoreCompileInputs.cache
+D:\Projects\Project4Demo\Demo1\Demo1.BL\obj\Debug\Demo1.BL.csproj.CopyComplete
+D:\Projects\Project4Demo\Demo1\Demo1.BL\obj\Debug\Demo1.BL.dll
+D:\Projects\Project4Demo\Demo1\Demo1.BL\obj\Debug\Demo1.BL.pdb
